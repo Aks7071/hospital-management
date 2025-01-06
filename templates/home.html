@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Hospital Management{% endblock %}
+
+{% block header %}
+<div class="container my-4">
+    <!-- Image Section -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div 
+                style="
+                    width: 100%; 
+                    max-width: 600px; 
+                    margin: auto; 
+                    overflow: hidden; 
+                    border-radius: 8px;"
+            >
+                <img 
+                    src="{% static 'img/hospital.jpg' %}" 
+                    alt="Hospital Management" 
+                    style="
+                        width: 100%; 
+                        height: auto; 
+                        object-fit: cover; 
+                        display: block;"
+                >
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>Welcome to the Hospital Management System</h1>
+    <p style="margin-top: 20px;">Manage your hospital efficiently with our system.</p>
+</div>
+{% endblock %}

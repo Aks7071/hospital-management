@@ -1,0 +1,35 @@
+<!-- pages/templates/pages/department_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ department.name }} Department</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>{{ department.name }} Department</h1>
+    <p>{{ department.description }}</p>
+    <p><strong>Head:</strong> {{ department.head }}</p>
+    <p><strong>Contact Info:</strong> {{ department.contact_info }}</p>
+
+    <h2>Doctors</h2>
+    <ul>
+        {% for doctor in doctors %}
+            <li>
+                <h3>{{ doctor.name }} ({{ doctor.specialty }})</h3>
+                <p><strong>Availability:</strong> {{ doctor.availability }}</p>
+            </li>
+        {% empty %}
+            <p>No doctors available in this department.</p>
+        {% endfor %}
+    </ul>
+
+    <h2>Schedule a Meeting with a Doctor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Request Meeting</button>
+    </form>
+</body>
+</html>
