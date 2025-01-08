@@ -4,7 +4,7 @@
 {% block title %}Home - Hospital Management{% endblock %}
 
 {% block header %}
-<div class="container my-4">
+<div class="container my-4" style="background: linear-gradient(to right, #3a7bd5, #3a6073); padding: 20px; border-radius: 10px;">
     <!-- Image Section -->
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,7 +14,8 @@
                     max-width: 600px; 
                     margin: auto; 
                     overflow: hidden; 
-                    border-radius: 8px;"
+                    border-radius: 10px; 
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
             >
                 <img 
                     src="{% static 'img/hospital.jpg' %}" 
@@ -23,7 +24,10 @@
                         width: 100%; 
                         height: auto; 
                         object-fit: cover; 
-                        display: block;"
+                        display: block; 
+                        transition: transform 0.3s ease;"
+                    onmouseover="this.style.transform='scale(1.05)'"
+                    onmouseout="this.style.transform='scale(1)'"
                 >
             </div>
         </div>
@@ -32,8 +36,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="container text-center">
-    <h1>Welcome to the Hospital Management System</h1>
-    <p style="margin-top: 20px;">Manage your hospital efficiently with our system.</p>
+<div class="container text-center" style="margin-top: 40px;">
+    <h1 style="font-family: 'Poppins', sans-serif; font-weight: bold; color: #3a7bd5;">Welcome to the Hospital Management System</h1>
+    <p style="margin-top: 20px; font-family: 'Roboto', sans-serif; font-size: 18px; color: #555;">
+        Manage your hospital efficiently with our system.
+    </p>
+    <a href="{% url 'departments' %}" class="btn btn-primary mt-4" style="padding: 10px 20px; font-size: 16px;">Explore Features</a>
+
 </div>
 {% endblock %}
+

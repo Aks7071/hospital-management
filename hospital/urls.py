@@ -26,4 +26,8 @@ urlpatterns = [
     path("patientservice/",views.patientservice,name='patientservice'),
     path('departments/', views.departments, name='departments'),  # List all departments
     path('departments/<int:department_id>/', views.department_detail, name='department_detail'),  # Department details
+    path('success/', views.success_page, name='success'),  # Add this line
+    path('request-meeting/<int:department_id>/', views.request_meeting, name='request_meeting'),
+    path('success/', views.success_page, name='success'),  # Success page URL
+    
 ]
